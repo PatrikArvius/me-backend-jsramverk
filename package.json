@@ -1,6 +1,6 @@
 {
   "name": "me-backend-jsramverk",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "backend api for my me react-app",
   "main": "index.js",
   "author": "Patrik Arvius",
