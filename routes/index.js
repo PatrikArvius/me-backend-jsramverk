@@ -3,10 +3,7 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     const data = {
-            text: `<div className="Me-picture">
-<img src={parv3} alt="me" />
-<h2>Patrik Arvius</h2>
-</div>
+            text: `
 <div className="Me-text">
 <h1>Om mig</h1>
 <p>Mitt namn är Patrik Arvius. Jag är född och uppvuxen i Stockholm men har stora delar av min släkt
