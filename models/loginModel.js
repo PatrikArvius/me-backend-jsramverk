@@ -9,10 +9,12 @@ const loginModel = {
 
         if (!(email && password)) {
             return res.status(401).json({
-                status: 500,
-                title: "Login error",
-                source: "/login",
-                detail: "email or password is missing"
+                error: {
+                    status: 500,
+                    title: "Login error",
+                    source: "/login",
+                    detail: "email or password is missing"
+                }
             });
         }
 
@@ -28,10 +30,12 @@ const loginModel = {
                 });
             } else if (!row) {
                 return res.status(401).json({
-                    status: 401,
-                    title: "No user",
-                    source: "/login",
-                    detail: "User with provided email does not exist"
+                    error: {
+                        status: 401,
+                        title: "No user",
+                        source: "/login",
+                        detail: "User with provided email does not exist"
+                    }
                 });
             }
 
