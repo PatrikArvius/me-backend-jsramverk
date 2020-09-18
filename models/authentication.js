@@ -18,9 +18,11 @@ const authentication = {
         jwt.verify(token, secret, function(err, decoded) {
             if (err) {
                 return res.status(500).json({
-                    status: 500,
-                    title: "Failed authentication",
-                    detail: err.message
+                    error: {
+                        status: 500,
+                        title: "Failed authentication",
+                        detail: err.message
+                    }
                 });
             }
 

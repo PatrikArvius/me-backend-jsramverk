@@ -30,7 +30,6 @@ const reportsModel = {
                     }
                 });
             }
-
             res.status(200).json( { data: row} );
         });
     },
@@ -59,7 +58,7 @@ const reportsModel = {
     },
 
     editReport: function(res, data) {
-        const week = data.week;
+        const week = parseInt(data.week);
         const text = data.text;
         const sql = 'UPDATE reports SET report_text = ? WHERE week = ?;';
 
@@ -74,7 +73,10 @@ const reportsModel = {
                 });
             }
 
-            res.status(204).send();
+            res.status(201).json({
+                msg: "Report successfully edited",
+                data: data
+            });
         });
     }
 };
